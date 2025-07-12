@@ -1,0 +1,19 @@
+def eje1():
+    variable = int(input("ingrese un numero entre el 1 y el 10:"))
+    txt = ""
+
+    if variable >= 1 and variable <= 10:
+        archivo = open("archivo.txt","w")
+
+
+        for pepito in range(1, 11):
+            txt += str(variable) + "x" + str(pepito) + "=" + str(variable * pepito) + "\n"
+        archivo.write(txt)
+        archivo.close()
+        print(txt)
+eje1()
+
+#Ejercicio 1
+#Escribir una función que pida un número entero entre 1 y 10 y
+#guarde en un fichero con el nombre tabla-n.txt la tabla de
+#multiplicar de ese número, donde n es el número introducido.

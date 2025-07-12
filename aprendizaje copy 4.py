@@ -1,0 +1,15 @@
+def eje2():
+    import requests
+    import json
+
+    url = "https://pokeapi.co/api/v2/pokemon/pikachu"
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        for words in json.loads(response.text):
+            print(words("word"))
+
+    except IOError: 
+        print("no se ha encontrado el archivo")           
+eje2()

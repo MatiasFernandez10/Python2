@@ -1,0 +1,40 @@
+def ej2(word):
+    archivo = open("fichero.csv","w")
+    archivo.write(word)
+    archivo.close()
+    
+def ej1():
+    try:
+        arch = open("cotizacion.csv","r")
+        array = []
+        word = ""
+        fila = 0
+
+        for line in arch:
+            for l in line:
+                if l == ";" or l == "\n":
+                    array.append(word)
+                    word = ""
+                else:
+                    word += l
+
+        for pos in range (len(array)):
+            space = ""
+            count = 10-len(array[pos])
+            for i in range (count):
+                space += " "
+            if fila == 4:
+                space += "|"
+            if fila == 3:
+                word += "\n"
+                fila = 0
+            word += f"| {array[pos]}{space}"
+            fila += 1
+
+        print(word)
+        ej2(word)
+        
+        arch.close()
+    except IOError:
+        print("No hay archivo")
+ej1()

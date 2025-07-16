@@ -1,34 +1,34 @@
-def ej2(word):
+def ej2(palabras):
     archivo = open("fichero.csv","w")
-    archivo.write(word)
+    archivo.write(palabras)
     archivo.close()
     
 def ej1():
     try:
         arch = open("cotizacion.csv","r")
         array = []
-        word = ""
+        palabras = ""
         fila = 0
 
         for palabra in arch:
             for l in palabra:
                 if l == ";" or l == "\n":
-                    array.append(word)
-                    word = ""
+                    array.append(palabras)
+                    palabras = ""
                 else:
-                    word += l
+                    palabras += l
 
-        for pos in range (len(array)):
-            space = ""
-            count = 10-len(array[pos])
+        for posicion in range (len(array)):
+            espac = ""
+            count = 10-len(array[posicion])
             for i in range (count):
-                space += " "
+                espac += " "
             if fila == 4:
-                space += "|"
+                espac += "|"
             if fila == 3:
                 word += "\n"
                 fila = 0
-            word += f"| {array[pos]}{space}"
+            word += f"| {array[posicion]}{espac}"
             fila += 1
 
         print(word)

@@ -5,9 +5,9 @@ def eje2():
     try: 
         arch = open("archivo.txt", "r")
 
-        for line in arch:
-            array.append(line)
-        print(line[m-1])
+        for linea in arch:
+            array.append(linea)
+        print(linea[m-1])
 
         arch.close()
     except IOError:

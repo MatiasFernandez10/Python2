@@ -10,8 +10,8 @@ def ej1():
         word = ""
         fila = 0
 
-        for line in arch:
-            for l in line:
+        for palabra in arch:
+            for l in palabra:
                 if l == ";" or l == "\n":
                     array.append(word)
                     word = ""

@@ -23,12 +23,10 @@ def ej1():
             count = 10-len(array[posicion])
             for i in range (count):
                 espac += " "
-            if fila == 4:
-                espac += "|"
             if fila == 3:
                 word += "\n"
                 fila = 0
-            word += f"| {array[posicion]}{espac}"
+            word += f"{array[posicion]}{espac}"
             fila += 1
 
         print(word)
@@ -38,3 +36,4 @@ def ej1():
     except IOError:
         print("No hay archivo")
 ej1()
+
